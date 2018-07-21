@@ -30,26 +30,33 @@
             <th scope="col">Destination</th>
             <th scope="col">Frequency</th>
             <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>""</td>
+            <td>""</td>
+            <td>""</td>
           </tr>
         </tbody>
       </table>
@@ -94,32 +101,23 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+
+
   <!-- Script -->
   <script>
-    // Capture Button Click
-    $("#add-user").on("click", function(event) {
-      // prevent form from trying to submit/refresh the page
-      event.preventDefault();
+   var config = {
+    apiKey: "AIzaSyCxJgWwZIMjN6H7uukK6iWs717hnB3DZek",
+    authDomain: "trainhomework-afdde.firebaseapp.com",
+    databaseURL: "https://trainhomework-afdde.firebaseio.com",
+    projectId: "trainhomework-afdde",
+    storageBucket: "trainhomework-afdde.appspot.com",
+    messagingSenderId: "332633686385"
+   };
+   firebase.initializeApp(config);
 
-      // Capture User Inputs and store them into variables
-      var name = $("#name-input").val().trim();
-      var email = $("#email-input").val().trim();
-      var age = $("#age-input").val().trim();
-      var comment = $("#comment-input").val().trim();
 
-      // Console log each of the user inputs to confirm we are receiving them
-      console.log(name);
-      console.log(email);
-      console.log(age);
-      console.log(comment);
-
-      // Output all of the new information into the relevant HTML sections
-      $("#name-display").text(name);
-      $("#email-display").text(email);
-      $("#age-display").text(age);
-      $("#comment-display").text(comment);
-
-    });
+   var database = firebase.database();
   </script>
 
 </body>
